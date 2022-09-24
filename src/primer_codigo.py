@@ -1,7 +1,7 @@
 import numpy as np
 import random
 import argparse
-
+import pandas as pd
 
 def calcular_min_max(lista_numeros, verbose=1):
     ''' 
