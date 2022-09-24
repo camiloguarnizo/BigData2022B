@@ -18,12 +18,19 @@ git config --global user.email "camio1734@gmail.com"
 git commit  -m "commmit incial del repositori"
 
 
-modificar un py 
+###aderir archivo o todo que se modifico 
 
  git add src/primer_codigo.py
 
 
+
+##commit actualizacion 
 it commit  -m "impoartar libreria de pandas"   
 
 
-git remote add origin https://github.com/camiloguarnizo/BigData2022B.git    
+## inicio remoto para hacer pus
+git remote add origin https://github.com/camiloguarnizo/BigData2022B.git   
+
+
+###publicar en git hub
+git push origin master 
