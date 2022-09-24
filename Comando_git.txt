@@ -23,4 +23,7 @@ modificar un py
  git add src/primer_codigo.py
 
 
-it commit  -m "impoartar libreria de pandas"       
+it commit  -m "impoartar libreria de pandas"   
+
+
+git remote add origin https://github.com/camiloguarnizo/BigData2022B.git    
