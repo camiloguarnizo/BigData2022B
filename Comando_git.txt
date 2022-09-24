@@ -1,0 +1,26 @@
+git --version
+
+git init
+
+git estatus
+
+git add --all
+
+git status  
+
+
+git config --global user.name "camiloguarnizo"
+
+
+git config --global user.email "camio1734@gmail.com"
+
+
+git commit  -m "commmit incial del repositori"
+
+
+modificar un py 
+
+ git add src/primer_codigo.py
+
+
+it commit  -m "impoartar libreria de pandas"       
