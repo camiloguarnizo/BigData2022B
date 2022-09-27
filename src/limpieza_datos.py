@@ -37,6 +37,13 @@ def main():
     ##minusculas , sin espacio y formato unicode
     df_minuscualas_espacio=convertir_minuscula(data)
     
+    ## convertir formato datos UTF-8
+    df_formato_Datos=formato_datos(data)
+    
+    ## quitar espacio en blanco
+    df_espacio_blanco=quitar_espacio(data)
+    
+    
     # guardar info resumen
     df_resumen=get_summary(data)
     
@@ -118,7 +125,44 @@ def convertir_minuscula (data):
 
     return str_localidad
 
+def formato_datos (data):
+    list_flis_localidad= list()
+    n_filas= data.shape[0]
+    for i in range(0, n_filas):
+        str_localidad=data['LOCALIDAD'][i]
+        
+        try:
+            val_data= str_localidad.decode('UTF-8')
+            
+            list_flis_localidad.append(val_data)
+        except Exception as e:
+            list_flis_localidad.append(str_localidad)
+        continue
+    
+    data['LOCALIDAD']=list_flis_localidad
+    
 
+    return str_localidad
+
+
+def quitar_espacio (data):
+    list_flis_localidad= list()
+    n_filas= data.shape[0]
+    for i in range(0, n_filas):
+        str_localidad=data['LOCALIDAD'][i]
+        
+        try:
+            val_data= str_localidad.lstrip()
+            
+            list_flis_localidad.append(val_data)
+        except Exception as e:
+            list_flis_localidad.append(str_localidad)
+        continue
+    
+    data['LOCALIDAD']=list_flis_localidad
+    
+
+    return str_localidad
 
 def get_summary(data):
   df_resume=data
