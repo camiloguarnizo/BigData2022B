@@ -3,6 +3,8 @@
 # 2. extraer resumen
 # 3. guardar resumen en formato csv
 
+# -*- coding: utf-8 -*-
+
 from fileinput import filename
 from lib2to3.pgen2.pgen import DFAState
 from pkgutil import get_data
@@ -128,24 +130,7 @@ def convertir_minuscula (data):
 
     return str_localidad
 
-def formato_datos (data):
-    list_flis_localidad= list()
-    n_filas= data.shape[0]
-    for i in range(0, n_filas):
-        str_localidad=data['LOCALIDAD'][i]
-        
-        try:
-            val_data= str_localidad.decode('latin-1')
-            
-            list_flis_localidad.append(val_data)
-        except Exception as e:
-            list_flis_localidad.append(str_localidad)
-        continue
-    
-    data['LOCALIDAD']=list_flis_localidad
-    
 
-    return str_localidad
 
 
 def quitar_espacio (data):
@@ -167,7 +152,25 @@ def quitar_espacio (data):
     return str_localidad
 
 
+ 
+def formato_datos (data):
+    list_flis_localidad= list()
+    n_filas= data.shape[0]
+    for i in range(0, n_filas):
+        str_localidad=data['LOCALIDAD'][i]
+        
+        try:
+            val_data= str_localidad.decode("latin-1")
+            
+            list_flis_localidad.append(val_data)
+        except Exception as e:
+            list_flis_localidad.append(str_localidad)
+        continue
     
+    data['LOCALIDAD']=list_flis_localidad
+    
+
+    return str_localidad   
      
 
 
@@ -198,7 +201,7 @@ def save_data(df,df2,filename):
     root_dir = Path(".").resolve().parent
     out_path = os.path.join(root_dir, 'data', 'processed', out_name)
     out_path2 =os.path.join(root_dir, 'data', 'processed', out_name)
-    df.to_csv(out_path, sep=';')
+    df.to_csv(out_path, encoding='latin-1',sep=';')
 
 
 
