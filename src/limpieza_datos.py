@@ -43,6 +43,9 @@ def main():
     ## quitar espacio en blanco
     df_espacio_blanco=quitar_espacio(data)
     
+    ##quitaNoAlfaNum
+    #df_quita_alfa=quitaNoAlfaNum(data)
+    
     
     # guardar info resumen
     df_resumen=get_summary(data)
@@ -132,7 +135,7 @@ def formato_datos (data):
         str_localidad=data['LOCALIDAD'][i]
         
         try:
-            val_data= str_localidad.decode('UTF-8')
+            val_data= str_localidad.decode('latin-1')
             
             list_flis_localidad.append(val_data)
         except Exception as e:
@@ -161,8 +164,13 @@ def quitar_espacio (data):
     
     data['LOCALIDAD']=list_flis_localidad
     
-
     return str_localidad
+
+
+    
+     
+
+
 
 def get_summary(data):
   df_resume=data
@@ -190,7 +198,7 @@ def save_data(df,df2,filename):
     root_dir = Path(".").resolve().parent
     out_path = os.path.join(root_dir, 'data', 'processed', out_name)
     out_path2 =os.path.join(root_dir, 'data', 'processed', out_name)
-    df.to_csv(out_path)
+    df.to_csv(out_path, sep=';')
 
 
 
