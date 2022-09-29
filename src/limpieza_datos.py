@@ -45,8 +45,8 @@ def main():
     ## quitar espacio en blanco
     df_espacio_blanco=quitar_espacio(data)
     
-    ##quitaNoAlfaNum
-    #df_quita_alfa=quitaNoAlfaNum(data)
+    ##arreglo caracteres
+    df_quita_alfa=arreglo_caracteres(data)
     
     
     # guardar info resumen
@@ -172,7 +172,42 @@ def formato_datos (data):
 
     return str_localidad   
      
+def arreglo_caracteres (data):
+    list_flis_localidad= list()
+    n_filas= data.shape[0]
+    for i in range(0, n_filas):
+        str_localidad=data['LOCALIDAD'][i]
+        ##print(data['LOCALIDAD'][i])
+        a='engativ '
+        b='ciudad bol¡var'
+        c='fontib¢n'
+        d='antonio nari¤o'
+        e='san crist¢bal'
+        f='los m rtires'
+        g='usa'
+        if data['LOCALIDAD'][i]==a:
+            list_flis_localidad.append('engativa')
+        elif data['LOCALIDAD'][i]==b:
+            list_flis_localidad.append('ciudad bolivar')
+        elif data['LOCALIDAD'][i]==c:
+            list_flis_localidad.append('fontibon')
+        elif data['LOCALIDAD'][i]==d:
+            list_flis_localidad.append('antonio nariño')
+        elif data['LOCALIDAD'][i]==e:
+            list_flis_localidad.append('san cristobal')
+        elif data['LOCALIDAD'][i]==f:
+            list_flis_localidad.append('los martires')
+        elif data['LOCALIDAD'][i][:3]==g:
+            list_flis_localidad.append('usaquen')
+        else:    
+            list_flis_localidad.append(str_localidad)
+        
+    
+    data['LOCALIDAD']=list_flis_localidad
+    
 
+    return str_localidad   
+     
 
 
 def get_summary(data):
