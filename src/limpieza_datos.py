@@ -17,7 +17,7 @@ parser =argparse.ArgumentParser()
 from pathlib import Path
 
 def main():
-    filename=filename="llamadas123_julio_2022.csv"
+    filename=filename="llamadas123_julio_2023.csv"
     # leer archivo
     data=get_data(filename=filename)
     
@@ -101,7 +101,6 @@ def cambio_formato_fecha_2 (data):
     return str_fecha
 
 
-
 def convertir_numerico(data):
     
     data['EDAD']=data['EDAD'].replace({'SIN_DATO': np.nan}) 
@@ -110,6 +109,7 @@ def convertir_numerico(data):
     f(x)
     data['EDAD'].apply(f)
     return data
+
 
 def convertir_minuscula (data):
     list_flis_localidad= list()
@@ -223,20 +223,25 @@ def get_data(filename):
     data_dir='data'
     data_dir2 = "raw"
     root_dir = Path(".").resolve().parent
-    file_path = os.path.join(root_dir,data_dir,data_dir2,filename)
+    file_path = os.path.join("gs://cguarnizo_bucket_llamadas123",data_dir,data_dir2,filename)
+    ##file_path = os.path.join(root_dir,data_dir,data_dir2,filename)
 
     data = pd.read_csv(file_path, encoding='latin-1', sep=';')
     return data
     #print(data.shape)
     
-    
 
 def save_data(df,df2,filename): 
     out_name='Limpieza_'+ filename
     root_dir = Path(".").resolve().parent
-    out_path = os.path.join(root_dir, 'data', 'processed', out_name)
-    out_path2 =os.path.join(root_dir, 'data', 'processed', out_name)
+    out_path = os.path.join("gs://cguarnizo_bucket_llamadas123", 'data', 'processed', out_name)
+    out_path2 =os.path.join("gs://cguarnizo_bucket_llamadas123", 'data', 'processed', out_name)
+    ##out_path = os.path.join(root_dir, 'data', 'processed', out_name)
+    ##out_path2 =os.path.join(root_dir, 'data', 'processed', out_name)
     df.to_csv(out_path, encoding='latin-1',sep=';')
+    print('Guardando en Big Query')
+    ### Guardar tabla en bigquery
+    df.to_gbq(destination_table='especializacionbigdatacamilo.llamadas_123',  if_exists='append' )
 
 
 
