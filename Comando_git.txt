@@ -34,3 +34,27 @@ git remote add origin https://github.com/camiloguarnizo/BigData2022B.git
 
 ###publicar en git hub
 git push origin master 
+
+################  para configurar enternos virtuales en google cloud worbench############
+
+
+## crear enterno
+python -m venv etl_llamadas
+
+## ubicarse sobre bin entorno
+source etl_llamadas/bin/activate
+
+## instalar paquetes
+pip installl
+
+### crear TXT con todos los pip install necesarios
+pip freeze>requirements.txt
+
+## desactivar
+desactivate
+
+### crear  otro e instalar paquetes desde el TXT
+
+python -m venv etl
+source  etl2/bin/activate
+pip install -r requirements.txt
