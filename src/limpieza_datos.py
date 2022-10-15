@@ -1,7 +1,4 @@
-# pseudo codigo
-# 1. leer archivo csv
-# 2. extraer resumen
-# 3. guardar resumen en formato csv
+
 
 # -*- coding: utf-8 -*-
 
@@ -15,8 +12,17 @@ from dateutil.parser import  parse
 import argparse
 parser =argparse.ArgumentParser()
 from pathlib import Path
+import logging
 
 def main():
+    log_fmt = '%(asctime)s - %(name)s - %(levelname)s - [%(filename)s:%(lineno)d] - %(message)s'
+    logging.captureWarnings(True)
+    logging.basicConfig(
+        level=logging.INFO
+        , format=log_fmt,
+        filename='data/logs/Etl_llamadas2.log'
+    )
+    
     filename=filename="llamadas123_julio_2023.csv"
     # leer archivo
     data=get_data(filename=filename)
@@ -101,6 +107,7 @@ def cambio_formato_fecha_2 (data):
     return str_fecha
 
 
+
 def convertir_numerico(data):
     
     data['EDAD']=data['EDAD'].replace({'SIN_DATO': np.nan}) 
@@ -109,7 +116,6 @@ def convertir_numerico(data):
     f(x)
     data['EDAD'].apply(f)
     return data
-
 
 def convertir_minuscula (data):
     list_flis_localidad= list()
@@ -220,6 +226,8 @@ def get_tipos(data):
 
 
 def get_data(filename):
+    logger= logging.getLogger('get_data')
+    
     data_dir='data'
     data_dir2 = "raw"
     root_dir = Path(".").resolve().parent
@@ -227,8 +235,14 @@ def get_data(filename):
     ##file_path = os.path.join(root_dir,data_dir,data_dir2,filename)
 
     data = pd.read_csv(file_path, encoding='latin-1', sep=';')
+    
+    
+    logger.info(f'Reading file:{file_path}')
+    logger.info(f'la tabla contiene {data.shape[0]} filas y {data.shape[1]} columnas')
+    
     return data
     #print(data.shape)
+    
     
 
 def save_data(df,df2,filename): 
