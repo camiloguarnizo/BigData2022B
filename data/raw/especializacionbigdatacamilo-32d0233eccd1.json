@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "especializacionbigdatacamilo",
+  "private_key_id": "32d0233eccd1a0a82fb45b00993e91de82a61c12",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDYanHwswc1JYL+\nzyfMx8Kul8eA42Kf57W0cIqQw5B3xMxCn2XmZXm15BENAB6S8+8aFZxg+C292Dz2\nuC4y8YAr7eVTs+O7WXXqFb77QLdQxYmBV68WP1mmMA+ZQwMgTdUgWjR7aEi6AYlM\nf7CUZzAyIu/gQjw/JZuz85XfV7heH+Q3AgZ2SR96ihscb0WN04eNv/wMkgecBcC5\n3PIpOsOj+zti71COHd4yWmSjeKN8tgsgujHWBtI6iFfM2HrHvGb6ZBe2MwDLEYhD\n2V/CadprxPcwWg9/2Xcjv3GWlHEzwWLBjNfliG8g+s1mCkD6dsDoIBR7MSn/cUct\nyP65wtFJAgMBAAECggEANUEkXqW/bU2YyZkyYwr5FjuVRVsvBshfB1L2Vh85qq9L\n0E0nJyXraF4B8CAKZgEO4m1U+Ou5XdEbV18FR1X0Q1scJpfKv2yJPpwxTeSj94VU\ni/aGyEO4jNOg0wcRet6MRpTL+14zH0qHfcKiMjKeQogkXRwPdT6M7SBQzg/o94gP\nhVA+8DTz4UXyHsxU2rb7ApfDlIyfEI6Qat0FqPeyvoA8cDVGBpjgzOjuQrIUR+FH\nAeCcbXvknLtuVQOaa57CxZdONwt/C7vyZoFhW7Wlim7LnJljiuLIUuNwdg6A4boC\n97epkiMMBLVjTg5KaayLlghHK2sX6Bu8GsQe8agnfQKBgQD3XJxSIqvyN9yIbqti\nUyd95MuOUHFmJkKxU7v2eaPUHqY/hW19K5dMu3atEtDMqKZMnqqutI2AiTj8ixra\nhomvSVDro/2+JLXL3R6EaDI09Zu2niDQhp5gffWOiA2x5q/AABjvw8S4mC3b7qUq\nbBpxDLIrqpIK54LTE56VKBUYMwKBgQDf+S5ApUWE6cEv3f/FFW8qUc9kUQ3bnpiE\nq1Ue9UVQ66f1TWAzbLPRlTaPjXm1ryE1FZmABJgQxh6/z8Akn9oWNz2fT5DN5JWk\nZILS4+BqK8EeOr3zTD8mHTZlY+nFL8h2I16VWievXPtbzJzo1uvbPNGIDUWeYkZs\ngakbfQZkkwKBgQC24VR9cT7Y7K3yfIffQQVQkYhhZl4AnMbwHa049APIvwRAsGAb\ni8/nni2GlgOjXAjfWutsEPcREeL868dlytQesUDPhsYB/1gdKhT25aZA+1ktccln\nAjAzvMyAnVwqrBhCBpBpK77Uj0ZQdSbNr3D5Jd7QY+Jnh3R0o+u58RFvewKBgEN0\nbsO1gvyG0lIyUEfxLqvWO9oAt2W/nDvIxjguspOuhcVRannScU3b3LTbbR6VAjFU\nsghmWc4jfTtTvJDLPAmY1YxXkEsSXydFxkjxrLMNPnp2QqM2AYbfIXTj5JIo0/0Q\npfnhTzZ3kJSTSWau5BYBeTG6nY8YFhGz81R+ESDVAoGBAPFdVokDaUbMnQftZiE3\n7tVmeFpZBYHxott8hm/OwVQmMkMGL3RmA2ym4AuX71h3Xuf90e8mIVFvx6jrtTZ9\nVXb0yd6mExPsZgiprtQMWdIqhwJXAwMoY/v0w5olQQ9PHwZAxI3q7+DDpdz1lFi2\n6KnzQV6tLwSUKoJClRxTUdF+\n-----END PRIVATE KEY-----\n",
+  "client_email": "prueba@especializacionbigdatacamilo.iam.gserviceaccount.com",
+  "client_id": "106694083038734784214",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/prueba%40especializacionbigdatacamilo.iam.gserviceaccount.com"
+}
